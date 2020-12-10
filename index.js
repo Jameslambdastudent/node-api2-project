@@ -2,7 +2,7 @@ const express = require('express')
 const postsRouter = require('./post/posts-router')
 
 const server = express()
-const PORT = 8000
+const port = process.env.PORT || 8000
 
 server.use(express.json())
 server.use(postsRouter)
@@ -11,7 +11,10 @@ server.use(postsRouter)
 
 
 server.get('/', (req, res) => {
-    res.status(200).json({message: "Server Up"})
+    res.status(200).json({
+        message: `Welcome ${process.env.COHORT}`,
+        fact: process.env.FUN_FACT || `You Have No Fun Fact`
+    })
 })
 
-server.listen(PORT, () => console.log(`Server Running Strong`))
+server.listen(port, () => console.log(`Server Running Strong`))

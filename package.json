@@ -5,7 +5,8 @@
     "private": true,
     "main": "index.js",
     "scripts": {
-        "server": "nodemon index.js"
+        "watch": "nodemon --require dotenv/config index.js",
+        "start": "node index.jsnpm"
     },
     "dependencies": {
         "express": "^4.17.1",
@@ -13,6 +14,8 @@
         "sqlite3": "^5.0.0"
     },
     "devDependencies": {
+        "cross-env": "^7.0.3",
+        "dotenv": "^8.2.0",
         "nodemon": "^2.0.6"
     }
 }

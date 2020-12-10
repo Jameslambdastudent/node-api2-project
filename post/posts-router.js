@@ -1,6 +1,7 @@
 const express = require('express')
 const posts = require('./post-module')
 
+
 const router = express.Router()
 
 router.post('/posts', (req, res) => {
